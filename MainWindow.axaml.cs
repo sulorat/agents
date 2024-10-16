@@ -22,6 +22,7 @@ public partial class MainWindow : Window
         public string Email { get; set; }
         public string AgentType { get; set; }
         public string Adress { get; set; } = "uiu";
+        public Bitmap? ChangePhoto { get; set; }
         public string AgentINN { get; set; }= "klljj";
         public string AgentKPP { get; set; }= "tert";
         public string AgentsDirectorName { get; set; }= "fghsfgh";

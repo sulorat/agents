@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media.Imaging;
 
 namespace AvaloniaApplication1;
 
@@ -12,11 +14,13 @@ public partial class AddOrEditWindow : Window
     {
         InitializeComponent();
         SaveOrEditButton.Content = "Добавить";
+        SelectImageButton.Content = "Добавить фото";
     }
     
     public AddOrEditWindow(MainWindow.Agent? agent, bool isEditing)
     {
         InitializeComponent();
+        SelectImageButton.Content = "Изменить фото";
         RemoveButton.IsVisible = true;
         _Agent = agent;
         SaveOrEditButton.Content = "Сохранить";
@@ -49,5 +53,23 @@ public partial class AddOrEditWindow : Window
     private void RemoveButtonClick(object? sender, RoutedEventArgs e)
     {
         Close(true);
+    }
+
+    private async void SelectImageButton_Click(object? sender, RoutedEventArgs e)
+    {
+        var dialog = new OpenFileDialog
+        {
+            Title = "Choose Product Image",
+            Filters = new List<FileDialogFilter>
+            {
+                new FileDialogFilter { Name = "Image Files", Extensions = { "png", "jpg", "jpeg" } }
+            }
+        };
+        string[] result = await dialog.ShowAsync(this);
+
+        if (result != null && result.Length > 0)
+        {
+            _Agent.AgentPhoto = new Bitmap(result[0]);
+        }
     }
 }

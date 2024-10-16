@@ -124,3 +124,4 @@ D:\RiderProjects3\AvaloniaApplication1\obj\Debug\net8.0\AvaloniaApplication1.pdb
 D:\RiderProjects3\AvaloniaApplication1\obj\Debug\net8.0\Avalonia.FDB175D9.Up2Date
 D:\RiderProjects3\AvaloniaApplication1\obj\Debug\net8.0\AvaloniaApplication1.genruntimeconfig.cache
 D:\RiderProjects3\AvaloniaApplication1\obj\Debug\net8.0\ref\AvaloniaApplication1.dll
+D:\RiderProjects3\AvaloniaApplication1\obj\Debug\net8.0\AvaloniaApplication1.sourcelink.json

@@ -33,8 +33,11 @@
                         </StackPanel>
                 </Border>
                 
-                <Border DockPanel.Dock="Right">
-                        <Image Name="AgentImage" Source=""></Image>
+                <Border Background="Bisque" DockPanel.Dock="Right">
+                        <StackPanel  HorizontalAlignment="Center">
+                                <Image Name="AgentImage" Height="150" Width="100"></Image>
+                                <Button  Margin="30" Name="SelectImageButton" Click="SelectImageButton_Click"/>
+                        </StackPanel>
                 </Border>
                 
         </DockPanel>
