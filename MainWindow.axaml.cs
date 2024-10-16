@@ -218,13 +218,13 @@ public partial class MainWindow : Window
     private async void ChangePriorityButtonClick(object? sender, RoutedEventArgs e)
     {
         var dialog  = new PriorityChangeWindow(maxPriorityAgent);
-        var result = await dialog.ShowDialog<int>(this);
+        var _result = await dialog.ShowDialog<int>(this);
         foreach (var agent in selectedItems)
         {
-            if (result != 0)
+            if (_result != 0)
             {
                 var agentsInList = _agents.Find(x => x.Phone == agent.Phone);
-                agentsInList.PriorityAsInt = result;
+                agentsInList.PriorityAsInt = _result;
                 agentsInList.Priority = ($"Приоритетность: {agentsInList.PriorityAsInt}");
             }
         }
