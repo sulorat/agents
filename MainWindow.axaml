@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.MainWindow"
+        x:CompileBindings="False"
+        Icon="avares://AvaloniaApplication1/Assets/Глазки_лого.png"
+        Title="AvaloniaApplication1">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <TextBox Name="SearchTextBox"  TextChanged="SearchAgents" Margin="10" Width="300" />
+            <ComboBox Name="SortComboBox" SelectionChanged="SortSelectionChandged"  MaxWidth="150"  Margin="10" Width="150"/>
+            <ComboBox Name="FilterComboBox" SelectionChanged="FilterSelectionChandged" Margin="10" Width="150"/>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" >
+            <Button Margin="10" Name="EditButton" Click="EditButtonClick" IsVisible="False"> Редактировать</Button>
+            <Button Margin="10" Name="ChangePriorityButoon" Click="ChangePriorityButtonClick" IsVisible="False"> Изменить приоритет на</Button>
+            <Button Margin="10,10,100,10" > Добавить</Button>
+            <Button Content="Пред" Margin="10" Click="PreviousPage"/>
+            <TextBlock Background="BlueViolet" Margin="10" Name="PagesCountTextBlock" Width="150"/>
+            <Button Content="След" Margin="10" Click="NextPage"/>
+        </StackPanel>
+        <ListBox SelectionMode="Multiple" SelectionChanged="SelectionListBox" Margin="10" Name="AgentsListBox">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel  Orientation="Horizontal" Background="{Binding AgentColor}">
+                        <Image Name="ImageAgents" Source="{Binding AgentPhoto}" Width="150" Height="150"/>
+                        <StackPanel >
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5,0,10,0" Text="{Binding AgentType}"/>
+                                <TextBlock  Text="{Binding Name}"/>
+                            </StackPanel>
+                            <TextBlock  Margin="5" Text="{Binding Sales}"/>
+                            <TextBlock Margin="5" Text="{Binding Priority}"/>
+                            <TextBlock Margin="5" Text="{Binding Phone}"/>
+                        </StackPanel>
+                        <TextBlock Margin="300,0,0,0" HorizontalAlignment="Center" Text="{Binding Discount}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+    </DockPanel>
+</Window>

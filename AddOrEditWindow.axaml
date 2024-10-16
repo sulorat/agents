@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.AddOrEditWindow"
+        x:CompileBindings="False"
+        Title="AddOrEditWindow">
+        <DockPanel>
+                <Border DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                                <Button Name="RemoveButton" Click="RemoveButtonClick" Content="Удалить" IsVisible="False"/>
+                                <Button Margin="20" Name="SaveOrEditButton" Click="SaveOrEditButtonClick" ></Button>
+                                <Button Margin="20" > Вернуться</Button>
+                        </StackPanel>
+                </Border>
+                <Border DockPanel.Dock="Left">
+                        <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                        <TextBox Name="AgentName" Margin="10"/>
+                                        <TextBox Name="AgentType" Margin="10"/>
+                                        <TextBlock Margin="10,10,0,10" Text="Приоритетность"/>
+                                        <TextBox Name="AgentPriority" Margin="10"/>
+                                </StackPanel>
+                                <TextBox Name="AgentAdress" Margin="10"/>
+                                <TextBox Name="AgentINN" Margin="10"/>
+                                <TextBox Name="AgentKPP" Margin="10"/>
+                                <TextBox Name="AgentsDirectorName" Margin="10"/>
+                                <StackPanel Orientation="Horizontal">
+                                        <TextBox Name="AgentPhone" Margin="10"/>
+                                        <TextBox Name="AgentEmail" Margin="10"/>
+                                </StackPanel>
+                        </StackPanel>
+                </Border>
+                
+                <Border DockPanel.Dock="Right">
+                        <Image Name="AgentImage" Source=""></Image>
+                </Border>
+                
+        </DockPanel>
+</Window>
